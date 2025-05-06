@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sales Administration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Home Page Styles */
+    #home {
+      height: 100vh;
+      background: linear-gradient(to right, #0052D4, #6FB1FC);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    #home h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    #enterBtn {
+      background-color: white;
+      color: #0052D4;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #enterBtn:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Main Site Hidden Initially */
+    #main-site {
+      display: none;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      background-color: #eee;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #0056b3;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .dashboard-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 200px;
+      background-color: #fafafa;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 1em;
+    }
+
+    form button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    form button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Home Page -->
+<div id="home">
+  <h1>Welcome to Sales Administration</h1>
+  <button id="enterBtn">Enter Dashboard</button>
+</div>
+
+<!-- Main Dashboard Site -->
+<div id="main-site">
+  <header>
+    <h1>Sales Administration Dashboard</h1>
+  </header>
+
+  <nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#sales">Sales</a>
+    <a href="#customers">Customers</a>
+    <a href="#reports">Reports</a>
+  </nav>
+
+  <div class="container">
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <p>Overview of key metrics:</p>
+      <div class="dashboard-cards">
+        <div class="card">
+          <h3>Total Sales</h3>
+          <p>$25,000</p>
+        </div>
+        <div class="card">
+          <h3>New Customers</h3>
+          <p>45</p>
+        </div>
+        <div class="card">
+          <h3>Products Sold</h3>
+          <p>320</p>
+        </div>
+      </div>
+      <!-- 📸 Replace this image URL with your own -->
+      <img src="https://www.geckoboard.com/uploads/Sales-YTD-dashboard-example-1efebb.png">
+    </section>
+
+    <!-- Sales -->
+    <section id="sales">
+      <h2>Sales</h2>
+      <p>Recent sales activity:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form>
+        <h3>Add New Sale</h3>
+        <input type="date" required>
+        <input type="text" placeholder="Customer Name" required>
+        <input type="text" placeholder="Product" required>
+        <input type="number" placeholder="Amount $" required>
+        <button type="submit">Add Sale</button>
+      </form>
+
+      <!-- 📸 Replace this image URL with your own -->
+      <img src="https://media.istockphoto.com/id/643956812/photo/sales-imporvement.jpg?s=612x612&w=0&k=20&c=BERc0TihWU4sZpzSTBsJpQ6em2wowpYCtHA0Iwbl7QM=" alt="Sales Image">
+    </section>
+
+    <!-- Customers -->
+    <section id="customers">
+      <h2>Customers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form>
+        <h3>Add New Customer</h3>
+        <input type="text" placeholder="Customer Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit">Add Customer</button>
+      </form>
+
+      <!-- 📸 Replace this image URL with your own -->
+      <img src="https://img.freepik.com/free-photo/collage-customer-experience-concept_23-2149367132.jpg" alt="Customer Image">
+    </section>
+
+    <!-- Reports -->
+    <section id="reports">
+      <h2>Reports</h2>
+      <ul>
+        <li>Monthly Sales Report</li>
+        <li>Customer Activity Report</li>
+        <li>Product Sales Trends</li>
+      </ul>
+
+      <form>
+        <h3>Create Report Note</h3>
+        <input type="text" placeholder="Report Title" required>
+        <textarea placeholder="Summary or notes..." rows="4" required></textarea>
+        <button type="submit">Add Report</button>
+      </form>
+
+      <!-- 📸 Replace this image URL with your own -->
+      <img src="https://media.istockphoto.com/id/1488294044/photo/businessman-works-on-laptop-showing-business-analytics-dashboard-with-charts-metrics-and-kpi.jpg" alt="Report Image">
+    </section>
+  </div>
+</div>
+
+<!-- JavaScript to show dashboard -->
+
+<script>
+  document.getElementById('enterBtn').addEventListener('click', function () {
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('main-site').style.display = 'block';
+
+    loadSales();
+    loadCustomers();
+    loadReports();
+    updateDashboard();
+  });
+
+  function updateDashboard() {
+    const sales = JSON.parse(localStorage.getItem('sales')) || [];
+    const customers = JSON.parse(localStorage.getItem('customers')) || [];
+
+    let totalSales = 0;
+    let totalProducts = sales.length;
+
+    sales.forEach(sale => {
+      totalSales += parseFloat(sale.amount);
+    });
+
+    document.querySelector('#dashboard .dashboard-cards').children[0].querySelector('p').textContent = `$${totalSales.toLocaleString()}`;
+    document.querySelector('#dashboard .dashboard-cards').children[1].querySelector('p').textContent = customers.length;
+    document.querySelector('#dashboard .dashboard-cards').children[2].querySelector('p').textContent = totalProducts;
+  }
+
+  // ==== SALES ====
+  const salesForm = document.querySelector('#sales form');
+  salesForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const inputs = salesForm.querySelectorAll('input');
+    const newSale = {
+      date: inputs[0].value,
+      customer: inputs[1].value,
+      product: inputs[2].value,
+      amount: inputs[3].value
+    };
+
+    let sales = JSON.parse(localStorage.getItem('sales')) || [];
+    sales.push(newSale);
+    localStorage.setItem('sales', JSON.stringify(sales));
+
+    appendSale(newSale, sales.length - 1);
+    salesForm.reset();
+    updateDashboard();
+  });
+
+  function appendSale(sale, index) {
+    const tbody = document.querySelector('#sales tbody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${sale.date}</td>
+      <td>${sale.customer}</td>
+      <td>${sale.product}</td>
+      <td>$${sale.amount}</td>
+      <td><button onclick="deleteSale(${index})">Delete</button></td>
+    `;
+    tbody.appendChild(row);
+  }
+
+  function loadSales() {
+    const sales = JSON.parse(localStorage.getItem('sales')) || [];
+    document.querySelector('#sales tbody').innerHTML = '';
+    sales.forEach((sale, index) => appendSale(sale, index));
+  }
+
+  function deleteSale(index) {
+    let sales = JSON.parse(localStorage.getItem('sales')) || [];
+    sales.splice(index, 1);
+    localStorage.setItem('sales', JSON.stringify(sales));
+    loadSales();
+    updateDashboard();
+  }
+
+  // ==== CUSTOMERS ====
+  const customerForm = document.querySelector('#customers form');
+  customerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const inputs = customerForm.querySelectorAll('input');
+    const newCustomer = {
+      name: inputs[0].value,
+      email: inputs[1].value
+    };
+
+    let customers = JSON.parse(localStorage.getItem('customers')) || [];
+    customers.push(newCustomer);
+    localStorage.setItem('customers', JSON.stringify(customers));
+
+    appendCustomer(newCustomer, customers.length - 1);
+    customerForm.reset();
+    updateDashboard();
+  });
+
+  function appendCustomer(customer, index) {
+    const tbody = document.querySelector('#customers tbody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${customer.name}</td>
+      <td>${customer.email}</td>
+      <td><button onclick="deleteCustomer(${index})">Delete</button></td>
+    `;
+    tbody.appendChild(row);
+  }
+
+  function loadCustomers() {
+    const customers = JSON.parse(localStorage.getItem('customers')) || [];
+    document.querySelector('#customers tbody').innerHTML = '';
+    customers.forEach((customer, index) => appendCustomer(customer, index));
+  }
+
+  function deleteCustomer(index) {
+    let customers = JSON.parse(localStorage.getItem('customers')) || [];
+    customers.splice(index, 1);
+    localStorage.setItem('customers', JSON.stringify(customers));
+    loadCustomers();
+    updateDashboard();
+  }
+
+  // ==== REPORTS ====
+  const reportForm = document.querySelector('#reports form');
+  reportForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const inputs = reportForm.querySelectorAll('input, textarea');
+    const newReport = {
+      title: inputs[0].value,
+      summary: inputs[1].value
+    };
+
+    let reports = JSON.parse(localStorage.getItem('reports')) || [];
+    reports.push(newReport);
+    localStorage.setItem('reports', JSON.stringify(reports));
+
+    appendReport(newReport, reports.length - 1);
+    reportForm.reset();
+  });
+
+  function appendReport(report, index) {
+    const ul = document.querySelector('#reports ul');
+    const li = document.createElement('li');
+    li.innerHTML = `${report.title}: ${report.summary} <button onclick="deleteReport(${index})">Delete</button>`;
+    ul.appendChild(li);
+  }
+
+  function loadReports() {
+    const reports = JSON.parse(localStorage.getItem('reports')) || [];
+    document.querySelector('#reports ul').innerHTML = '';
+    reports.forEach((report, index) => appendReport(report, index));
+  }
+
+  function deleteReport(index) {
+    let reports = JSON.parse(localStorage.getItem('reports')) || [];
+    reports.splice(index, 1);
+    localStorage.setItem('reports', JSON.stringify(reports));
+    loadReports();
+  }
+</script>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+  }
+
+  /* Home Page Styles */
+  #home {
+    height: 100vh;
+    background: linear-gradient(to right, #0052D4, #6FB1FC);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+  }
+
+  #home h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+  }
+
+  #enterBtn {
+    background-color: white;
+    color: #0052D4;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  #enterBtn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+
+  #main-site {
+    display: none;
+    animation: slideUp 0.7s ease-out;
+  }
+
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #007BFF;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    background-color: #0056b3;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  section {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    animation: slideFade 0.8s ease-in-out;
+  }
+
+  .dashboard-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #e9f0fa;
+    padding: 20px;
+    border: 1px solid #d1e3f0;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  form input, form textarea, form button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+  }
+
+  form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    transition: 0.3s ease;
+  }
+
+  form button:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  table th, table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  table th {
+    background-color: #f1f1f1;
+  }
+
+  table td button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  table td button:hover {
+    background-color: #c82333;
+  }
+
+  ul li {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul li button {
+    margin-left: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  ul li button:hover {
+    background-color: #c82333;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideFade {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }s
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+</body>
+</html>
